@@ -19,8 +19,6 @@ jobs:
           node-version: 16.13.0
       - name: Install Dependencies
         run: npm install
-      - name: npm build
-        run: npm run build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -31,8 +29,8 @@ jobs:
         uses: appleboy/lambda-action@master
         with:
           function_name: nextserver
+          role: nextserver-role-u1ny9bre
           handler: handler
-          role:
           zip_file: output.zip
           source: src
           runtime: nodejs16.x
