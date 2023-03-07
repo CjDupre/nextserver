@@ -1,5 +1,4 @@
 const express = require("express");
-const { request } = require("http");
 const serverless = require('serverless-http');
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -24,8 +23,6 @@ app.post("/api", (req, res) => {
 app.get("/api/:favoriteSong", (req, res) => {
     res.json({ message: `${req.params.favoriteSong} , is what was entered!, ${req.query.favoriteBPM}` });
 });
-
-
 
 
 app.listen(PORT, () => {
