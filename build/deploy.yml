@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  ApiGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: screencache-landing-api
+      StageName: prod
+      Cors:
+        AllowMethods: "'POST, GET'"
+        AllowOrigin: "'*'"
+        AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+      Auth:
+        DefaultAuthorizer: 'NONE'
+        InvokeRole: 'NONE'
+  AuthLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: screencache-landing-api
+      Handler: app.handler
+      Runtime: nodejs14.x
+      CodeUri: ../src
+      Events:
+        SongAndBPMPost:
+          Type: Api
+          Properties:
+            Path: /api
+            Method: POST
+            RestApiId:
+              Ref: ApiGateway
+        SongAndBPMGet:
+          Type: Api
+          Properties:
+            Path: /api/{favoriteSong}
+            Method: GET
+            RestApiId:
+              Ref: ApiGateway
