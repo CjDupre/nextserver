@@ -17,9 +17,9 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: screencache-landing-api
-      Handler: app.handler
+      Handler: index.handler
       Runtime: nodejs14.x
-      CodeUri: ../src
+      CodeUri: ..
       Events:
         SongAndBPMPost:
           Type: Api

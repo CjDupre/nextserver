@@ -19,7 +19,7 @@ Resources:
       FunctionName: screencache-landing-api
       Handler: app.handler
       Runtime: nodejs14.x
-      CodeUri: s3://screencache-landing-api/46da761daa997ce684b608df55239fcb
+      CodeUri: s3://screencache-landing-api/8c8a1b9f6b0c9e44cb0c5a0c877b8b07
       Events:
         SongAndBPMPost:
           Type: Api

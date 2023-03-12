@@ -2,7 +2,7 @@
   "name": "nextserver",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
     "deploy": "chmod +x ./build/package.sh && chmod +x ./build/deploy.sh && ./build/package.sh && ./build/deploy.sh"
