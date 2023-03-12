@@ -31,8 +31,7 @@ jobs:
           function_name: nextserver
           role: lambda-role
           handler: handler
-          zip_file: output.zip
-          source: src
+          source: src/index.js
           runtime: nodejs16.x
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
