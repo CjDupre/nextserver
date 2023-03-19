@@ -28,3 +28,10 @@ Resources:
             Method: GET
             RestApiId:
               Ref: ApiGateway
+        ScreenshotsPost:
+          Type: Api
+          Properties:
+            Path: /screenshotpost
+            Method: POST
+            RestApiId:
+              Ref: ApiGateway
